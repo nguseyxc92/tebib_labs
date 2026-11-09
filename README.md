@@ -6,7 +6,7 @@
 
 **Live site**
 
-- GitHub Pages: https://nguseyxc92.github.io/tebib-labs-website/
+- GitHub Pages: https://nguseyxc92.github.io/tebib_labs/
 - Netlify: https://tebib-labs.netlify.app/
 
 ---
