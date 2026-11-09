@@ -1,104 +1,100 @@
-# Tebib Labs — Official Corporate Website
+# Tebib Labs — Official Website
 
-> **"Be Wise."**  
-> Software Engineering & Applied R&D  
+> **"Be Wise."**
+> Software Engineering & Applied R&D
 > Computational Tools · Structural Reliability · Scientific Systems
+
+**Live site**
+
+- GitHub Pages: https://nguseyxc92.github.io/tebib-labs-website/
+- Netlify: https://tebib-labs.netlify.app/
 
 ---
 
 ## 1. Overview
 
-This repository hosts the official corporate web application for **Tebib Labs**, developed by Founder & CEO **Neguse Solomon Mekonnen**.
+This repository contains the official corporate website of **Tebib Labs**, founded by **Neguse Solomon Mekonnen**.
 
-Tebib Labs develops software products, computational tools, and applied research solutions that turn complex engineering and mathematical problems into practical technology. The company connects civil infrastructure risk assessment, uncertainty quantification, and Bayesian updating with modern full-stack software architecture.
+Tebib Labs builds software products, computational tools and applied research solutions that turn complex engineering and mathematical problems into practical technology. The company connects civil infrastructure risk assessment, uncertainty quantification and Bayesian updating with modern full-stack software engineering.
+
+The site is a static single-page application. It has no backend and needs no environment variables.
 
 ---
 
-## 2. Architecture & Tech Stack
+## 2. Tech Stack
 
-- **Frontend Framework**: React 19 + TypeScript
-- **Routing**: React Router (DOM) with complete page routes and scroll restoration
-- **Styling**: Tailwind CSS v4 with dark forest green / obsidian canvas (`#050D0A`), neon mint highlights (`#00F5A0`), and hairline structural borders (`#163024`)
-- **Typography**: Plus Jakarta Sans (Display / Body) & JetBrains Mono (Technical / Tabular)
-- **Visualizations**:
-  - Interactive Canvas: Finite-element structural node stress field (`HeroMeshCanvas`)
-  - Interactive SVG Calculator: Conjugate Bayesian updating of prior vs. posterior resistance distributions and $\beta$ index (`BayesianCurveInteractive`)
-  - Real-Time Telemetry Concept: Multi-channel sensor-data ingestion sparkline (`SensorDashboardDemo`)
+- **Framework**: React 19 + TypeScript
+- **Routing**: React Router with hash-based URLs (`/#/about`), so it works on any static host or sub-path
+- **Styling**: Tailwind CSS v4, dark forest-green canvas (`#050D0A`), mint highlights (`#00F5A0`), hairline borders (`#163024`)
+- **Typography**: Plus Jakarta Sans (display and body) and JetBrains Mono (technical)
+- **Visualizations**
+  - Canvas finite-element stress field (`HeroMeshCanvas`)
+  - Interactive SVG Bayesian updating of prior vs. posterior resistance and the β index (`BayesianCurveInteractive`)
+  - Multi-channel sensor telemetry concept (`SensorDashboardDemo`)
 - **Icons**: Lucide React
-- **Bundler & Tooling**: Vite 8, TypeScript 5+
+- **Build tool**: Vite 8
 
 ---
 
-## 3. Route Structure
+## 3. Pages
 
-All 13 routes are fully implemented with real content:
-
-| Path | Purpose |
+| Route | Content |
 | :--- | :--- |
-| `/` | **Home**: Hero with interactive mesh, principles, 4 service pillars, 2 featured projects, approach timeline, philosophy, CTAs |
-| `/about` | **About**: Amharic etymology (ጠቢብ / Tebib), mission, vision, 6 values, founder profile & research foundation |
-| `/services` | **Services**: 4 core disciplines (Custom Software, Scientific Computing, Data Systems, Applied R&D), deliverables, 5-stage engagement lifecycle |
-| `/projects` | **Projects**: Filterable catalog of initiatives (Engineering Software, Applied Research, Planned Products) |
-| `/projects/bayesian-reliability-engine` | **Project 001**: Bayesian Reliability Updating Engine (In Development) — problem statement, MCMC inference, interactive distribution plot, Zijlweg Viaduct case study |
-| `/projects/structural-health-monitoring` | **Project 002**: Structural Health Monitoring Platform (Planned) — sensor ingestion, thermal filtering, synthetic telemetry dashboard |
-| `/research` | **Research**: Master's dissertation details (UPC NoRISK), 6 research disciplines, translational research-to-code pipeline |
-| `/insights` | **Insights**: Technical engineering journal with category filters and search |
-| `/insights/:slug` | **Article Detail**: Individual reading view, unboxed metadata, copy link, and related articles |
-| `/contact` | **Contact**: Validated project inquiry form with honeypot spam protection, copyable email, and backend configuration status |
-| `/privacy` | **Privacy Policy**: Honest data controller, retention, cookie, and rights disclosures |
-| `/terms` | **Terms of Use**: Intellectual property, limitations of engineering advice, project status notices |
-| `*` | **404**: Custom branded missing page route |
+| `/#/` | Home: hero, principles, four service areas, featured projects, approach, philosophy |
+| `/#/about` | Meaning of the name (ጠቢብ / Tebib), mission, vision, values, founder profile |
+| `/#/services` | Custom Software, Engineering & Scientific Computing, Data & Analytical Applications, Applied Research & Prototyping, plus the five-stage engagement process |
+| `/#/projects` | Filterable project catalog |
+| `/#/projects/bayesian-reliability-engine` | Bayesian Reliability Updating Engine (in development), with interactive plot and Zijlweg Viaduct case study |
+| `/#/projects/structural-health-monitoring` | Structural Health Monitoring Platform (planned), with telemetry demo |
+| `/#/research` | Master's research (UPC / Padua, NoRISK) and research disciplines |
+| `/#/insights` | Technical articles with category filters and search |
+| `/#/insights/:slug` | Article reading view and related articles |
+| `/#/contact` | Project inquiry form (see note below) |
+| `/#/privacy` | Privacy Policy |
+| `/#/terms` | Terms of Use |
+| any other path | Branded 404 page |
+
+**Contact form:** it validates input and blocks bots with a honeypot field, but it does not send email. Visitors can copy or click the contact email address. To send inquiries automatically, connect a form service such as Formspree or Web3Forms.
 
 ---
 
-## 4. Local Development & Build
+## 4. Local Development
 
-### Install Dependencies
 ```bash
-npm install
+npm install        # install dependencies
+npm run dev        # dev server at http://localhost:3000
+npm run lint       # TypeScript type check
+npm run build      # production build into /dist
 ```
-
-### Run Local Development Server
-```bash
-npm run dev
-```
-Server starts on port `3000` at `http://localhost:3000`.
-
-### Type Checking & Linting
-```bash
-npm run lint
-```
-
-### Production Build
-```bash
-npm run build
-```
-Generates an optimized, tree-shaken static bundle in the `/dist` directory.
 
 ---
 
-## 5. Deploying to GitHub Pages
+## 5. Deployment
 
-1. Push this project to the `main` branch of your GitHub repository.
-2. In the repo go to **Settings → Pages** and set **Source** to **GitHub Actions**.
-3. The workflow in `.github/workflows/deploy.yml` builds and publishes the site on every push.
+### GitHub Pages
+1. Push to the `main` branch.
+2. In the repo, open **Settings → Pages** and set **Source** to **GitHub Actions**.
+3. `.github/workflows/deploy.yml` builds and publishes on every push.
 
-The site is served at `https://<username>.github.io/<repo-name>/`. It uses hash-based routing (`/#/about`) and relative asset paths, so it works from any sub-path or custom domain.
+### Netlify
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-> Pages must be set to **GitHub Actions**, not "Deploy from a branch". Deploying the raw source gives a blank white page because browsers cannot run the `.tsx` files.
+Because the site uses relative asset paths and hash routing, the same build works on both hosts and on a custom domain without extra configuration.
+
+### Custom domain
+Add a file named `CNAME` inside `public/` containing the domain (for example `tebiblabs.com`), then set the same domain in **Settings → Pages → Custom domain**.
 
 ---
 
-## 6. Founder Approval Checklist
+## 6. Content Notes
 
-- [x] Official logo mark and banner integrated
-- [x] Brand slogan verified: "Be Wise."
-- [x] Founder academic biography accurate (UPC Erasmus Mundus NoRISK master's graduate)
-- [x] Zijlweg Viaduct proof load testing reference included accurately
-- [x] Bayesian Reliability Updating Engine marked as **In Development**
-- [x] Structural Health Monitoring Platform marked as **Planned**
-- [x] No fabricated commercial claims, client logos, or false testimonials
-- [x] All 13 routes active and responsive from mobile (320px) to wide desktop (1920px)
-- [x] WCAG AA contrast and zero-pill metadata typography enforced
-- [ ] Founder review of Privacy Policy and legal jurisdiction prior to commercial filing
-- [ ] Founder replacement of photo placeholder with official portrait
+- Official logo, banner and founder portrait are integrated.
+- The Bayesian Reliability Updating Engine is marked **In Development** and the Structural Health Monitoring Platform is marked **Planned**.
+- The site contains no client logos, testimonials or commercial claims.
+- Responsive from 320 px phones to wide desktops, with WCAG AA contrast.
+- Before commercial filing, review the Privacy Policy and Terms for the correct legal jurisdiction.
+
+---
+
+© Tebib Labs. All rights reserved.
