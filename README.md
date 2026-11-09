@@ -1,4 +1,4 @@
-# Tebib Labs — Official Website
+# Tebib Labs — Official Websites
 
 > **"Be Wise."**
 > Software Engineering & Applied R&D
