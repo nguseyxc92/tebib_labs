@@ -4,10 +4,7 @@
 > Software Engineering & Applied R&D
 > Computational Tools · Structural Reliability · Scientific Systems
 
-**Live site**
-
-- GitHub Pages: https://nguseyxc92.github.io/tebib_labs/
-- Netlify: https://tebib-labs.netlify.app/
+**Live site:** https://tebib-labs.netlify.app/
 
 ---
 
