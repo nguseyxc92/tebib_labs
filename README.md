@@ -68,19 +68,11 @@ npm run build      # production build into /dist
 
 ## 5. Deployment
 
-### GitHub Pages
-1. Push to the `main` branch.
-2. In the repo, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-3. `.github/workflows/deploy.yml` builds and publishes on every push.
-
 ### Netlify
 - Build command: `npm run build`
 - Publish directory: `dist`
 
 Because the site uses relative asset paths and hash routing, the same build works on both hosts and on a custom domain without extra configuration.
-
-### Custom domain
-Add a file named `CNAME` inside `public/` containing the domain (for example `tebiblabs.com`), then set the same domain in **Settings → Pages → Custom domain**.
 
 ---
 
